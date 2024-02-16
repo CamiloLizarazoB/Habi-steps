@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   & svg {
     padding: 6px;
     width: 30px;
-    height: 19px;
+    height: 16px;
   }
 `;
 

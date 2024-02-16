@@ -12,7 +12,7 @@ function App({ step }) {
     <Router>
       <Wrapper>
         <LeftContainer logo={logo} />
-        {step !== stepsObj.length && <SummaryContainer />}
+        {step !== stepsObj.length && <SummaryContainer open={false}/>}
       </Wrapper>
     </Router>
   );

@@ -2,11 +2,29 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: block;
-  width: 340px;
   background: rgb(252, 252, 252);
   padding: 80px 24px;
+  width: 332px;
+  border-radius: 10px;
+  @media (max-width: 1279px) {
+    display: ${(props) => (props.open ? "block" : "none")};
+  }
 `;
 export const HeaderSummary = styled.div``;
+
+export const CloseIcon = styled.div`
+  cursor: pointer;
+  position: relative;
+  width: 33px;
+  float: right;
+  margin: 11px;
+  top: 5px;
+  text-align: center;
+  @media (min-width: 1280px) {
+    display: none;
+  }
+`;
+
 export const Typography = styled.div`
   color: rgb(150, 52, 255);
   text-transform: uppercase;

@@ -1,6 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
-import { ButtonStyled, Typography, Wrapper, WrapperButton } from "./styles";
+import {
+  ButtonStyled,
+  Instruction,
+  Typography,
+  Wrapper,
+  WrapperButton,
+} from "./styles";
 import {
   Link,
   useLocation,
@@ -14,7 +20,6 @@ import { connect, useDispatch } from "react-redux";
 import { addFieldData } from "../../actions";
 
 const Steps = ({ actualStep, formFields }) => {
-  console.log("🚀 ~ Steps ~ formFields:", formFields);
   const dispatch = useDispatch();
   const location = useLocation();
   const currentPath = location.pathname;
@@ -53,6 +58,7 @@ const Steps = ({ actualStep, formFields }) => {
       <FormProvider {...methods}>
         <form>
           <Typography>{`Paso ${element?.order} de ${stepsObj.length}: ${element?.description}`}</Typography>
+          <Instruction>{element?.instruction}</Instruction>
           <Routes>
             <Route exact path={"/"} element={<></>} />
             {stepsObj.map((step) => (

@@ -10,9 +10,10 @@ import {
   Wrapper,
 } from "./styles";
 
-const SummaryContainer = ({ summary, step }) => {
+const SummaryContainer = ({ summary, step, open }) => {
+
   return (
-    <Wrapper>
+    <Wrapper open={open}>
       <HeaderSummary>
         <Typography>{"Información del cliente"}</Typography>
         <Divider />

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   width: 50%;
   margin: auto;
   & form {
-    margin: 23vh 0;
+    margin: 10vh 0 20vh;
   }
 `;
 
@@ -17,6 +17,7 @@ export const ButtonStyled = styled.button`
   font-size: 16px;
   width: 320px;
   border-radius: 40px;
+  border: none;
   &:hover {
     background-color: rgb(99, 1, 204);
     border: 2px solid rgb(99, 1, 204);
@@ -33,9 +34,19 @@ export const ButtonStyled = styled.button`
 export const Typography = styled.h1`
   font-weight: 600;
   color: #6301cc;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  @media (max-width: 1360px) {
+    font-size: 29px;
+  }
+  @media (max-width: 959px) {
+    font-size: 25px;
+  }
 `;
 export const WrapperButton = styled.div`
   text-align: center;
   margin: 50px 0;
+`;
+export const Instruction = styled.div`
+  color: rgb(109, 105, 112);
+  margin-bottom: 50px;
 `;

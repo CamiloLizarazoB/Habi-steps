@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { Wrapper } from "./styles";
+import { CheckBoxItem, Label, Wrapper } from "./styles";
 
 const CheckBoxGroup = ({ name, options }) => {
   const { register } = useFormContext(); // retrieve all hook methods
@@ -9,15 +9,15 @@ const CheckBoxGroup = ({ name, options }) => {
   return (
     <Wrapper>
       {options.map((option) => (
-        <>
+        <CheckBoxItem htmlFor={option.name}>
           <input
             type="checkbox"
             id={option.name}
             {...register(`${name}.${option.name}`)}
           />
-          <label htmlFor={option.name}>{option.text}</label>
+          <Label>{option.text}</Label>
           <br />
-        </>
+        </CheckBoxItem>
       ))}
     </Wrapper>
   );
