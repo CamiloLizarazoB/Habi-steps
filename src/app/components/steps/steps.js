@@ -22,7 +22,7 @@ import { addFieldData } from "../../actions";
 const Steps = ({ actualStep, formFields }) => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath = location?.pathname;
   const navigate = useNavigate();
   const methods = useForm();
   const element = stepsObj.find((step) => step.path === currentPath);
