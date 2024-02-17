@@ -7,21 +7,22 @@ const CheckBoxGroup = ({ name, options }) => {
   const { register } = useFormContext(); // retrieve all hook methods
 
   return (
-    <Wrapper>
-      {options.map((option) => (
-        <CheckBoxItem htmlFor={option.name}>
-          <input
-            type="checkbox"
-            id={option.name}
-            {...register(`${name}.${option.name}`)}
-          />
-          <Label>{option.text}</Label>
-          <br />
-        </CheckBoxItem>
-      ))}
-    </Wrapper>
+    <>
+      <Wrapper>
+        {options.map((option, index) => (
+          <CheckBoxItem key={index} htmlFor={option.name}>
+            <input
+              type="checkbox"
+              id={option.name}
+              {...register(`${name}.${option.name}`)}
+            />
+            <Label>{option.text}</Label>
+            <br />
+          </CheckBoxItem>
+        ))}
+      </Wrapper>
+    </>
   );
 };
-
 
 export default CheckBoxGroup;

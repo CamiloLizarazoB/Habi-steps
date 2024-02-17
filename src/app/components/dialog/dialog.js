@@ -8,7 +8,7 @@ const DialogComponent = ({ open, handleOpen }) => {
   return (
     <Wrapper open={open}>
       <Dialog>
-        <CloseIcon onClick={handleOpen.bind(null)}>
+        <CloseIcon onClick={handleOpen?.bind(null)}>
           <X size={21} />
         </CloseIcon>
         <DialogContent>

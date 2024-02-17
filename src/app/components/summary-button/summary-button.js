@@ -8,11 +8,11 @@ const SummaryButton = ({ step }) => {
   const { handleOpen, open } = useDialogContext();
 
   return (
-    <Wrapper>
-      {!open && step !== stepsObj.length && (
-        <button onClick={handleOpen.bind(null)}>Ver resumen</button>
-      )}
-    </Wrapper>
+      <Wrapper>
+        {!open && step !== stepsObj.length && (
+          <button onClick={handleOpen?.bind(null)}>Ver resumen</button>
+        )}
+      </Wrapper>
   );
 };
 

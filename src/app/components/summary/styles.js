@@ -13,7 +13,7 @@ export const GridContainer = styled.div`
   background: #fcfcfc;
   border-radius: 10px;
   padding: 40px;
-  @media (min-width: 900px) {
+  @media (min-width: 1150px) {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
 `;
@@ -38,14 +38,12 @@ export const Button = styled.button``;
 
 export const SummaryLabel = styled.p`
   font-weight: 600;
-  color: #6301cc;
   ${(props) =>
     props.primary &&
     `
   background: #6301cc;
     padding: 10px;
     border-radius: 21px;
-    width: 40%;
     text-align: center;
     color: white;`}
 `;

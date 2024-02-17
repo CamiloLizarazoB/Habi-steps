@@ -36,7 +36,7 @@ export const stepsObj = [
     component: InputComponent,
     name: "email",
     order: 2,
-    instruction: "Por favor ingresa un correo electrónico.",
+    instruction: "Por favor ingrese un correo electrónico.",
     description: "Correo Electrónico",
     validation: {
       pattern: /^\S+@\S+\.\S{2,}$/,
@@ -49,7 +49,7 @@ export const stepsObj = [
     component: InputComponent,
     name: "address",
     order: 3,
-    instruction: "Por favor ingresa una dirección de la vivienda.",
+    instruction: "Por favor ingrese dirección de la vivienda.",
     description: "Dirección del Apartamento",
     validation: {
       message: "Por favor dirección del departamento.",
@@ -62,8 +62,9 @@ export const stepsObj = [
     component: InputComponent,
     name: "floor",
     order: 4,
-    instruction: "Por favor ingresa el número de piso. Ten en cuenta que en número maximo puede ser hasta 50 pisos.",
+    instruction: "Por favor ingrese el número de piso. Ten en cuenta que en número maximo puede ser hasta 50 pisos.",
     description: "Número de Piso",
+    type: "number",
     validation: {
       max: 50,
       message: "El valor es requerido y no puede ser un valor mayor a 50.",
@@ -74,9 +75,9 @@ export const stepsObj = [
     path: "/opciones",
     component: CheckboxGroup,
     options: optionsCheckboxGroup,
-    name: "flat-options",
+    name: "flatOptions",
     order: 5,
-    instruction: "Por favor ingresa las caracteristicas adicionales del inmueble.",
+    instruction: "Por favor ingrese las caracteristicas adicionales del inmueble.",
     description: "Opciones del Apartamento",
   },
   {

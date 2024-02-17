@@ -48,7 +48,7 @@ const Steps = ({ actualStep, formFields }) => {
   }, [currentPath]);
 
   useEffect(() => {
-    if (Object.keys(formFields).length === 0) {
+    if (formFields && Object.keys(formFields).length === 0) {
       handleNavigateFirstStep();
     }
   }, [formFields]);

@@ -18,7 +18,7 @@ const SummaryComponent = ({ step, summary }) => {
         {Object.entries(summary).map((key, index) => {
           if (typeof key[1] === "object") {
             return (
-              <FlatOptions>
+              <FlatOptions key={`${index}-option`}>
                 {Object.values(key[1]).includes(true) && (
                   <SummaryLabel>{"El apartamento cuenta con:"}</SummaryLabel>
                 )}
@@ -26,7 +26,7 @@ const SummaryComponent = ({ step, summary }) => {
                   {Object.entries(key[1]).map((key_1, index_1) => {
                     if (key_1[1]) {
                       return (
-                        <div>
+                        <div key={index_1}> 
                           <SummaryLabel
                             primary
                           >{`${stepsObj[index].options[index_1].text}`}</SummaryLabel>
@@ -40,7 +40,7 @@ const SummaryComponent = ({ step, summary }) => {
             );
           } else {
             return (
-              <GridItem>
+              <GridItem key={`${index}-option`}>
                 <SummaryLabel>{`${stepsObj[index].description}:`}</SummaryLabel>
                 <SummaryText>{key[1]}</SummaryText>
               </GridItem>
@@ -57,7 +57,7 @@ const SummaryComponent = ({ step, summary }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     summary: state.formData.formFields,
     step: state.formData.step,

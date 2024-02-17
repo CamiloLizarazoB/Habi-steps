@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { connect } from "react-redux";
 import { Error, Input, Wrapper } from "./styles";
 
-const InputComponent = ({ name, form, validation, Icon, placeholder }) => {
+const InputComponent = ({ name, form, validation, Icon, placeholder, type = "text" }) => {
   const {
     register,
     setValue,
@@ -12,14 +12,14 @@ const InputComponent = ({ name, form, validation, Icon, placeholder }) => {
   } = useFormContext();
 
   useEffect(() => {
-    setValue(name, form[name]);
+    setValue(name, form?.[name]);
   }, [name]);
 
   return (
     <Wrapper>
       <div className="wrapper-elements">
         <Icon />
-        <Input {...register(name, { required: true, ...validation })} placeholder={placeholder}/>
+        <Input type={type} {...register(name, { required: true, ...validation })} placeholder={placeholder}/>
       </div>
       {dirtyFields[name] && !isValid && <Error>{validation?.message}</Error>}
     </Wrapper>
