@@ -1,13 +1,35 @@
-import React from "react";
-import { Input, Wrapper } from "./styles";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
+import { useFormContext } from "react-hook-form";
+import { connect } from "react-redux";
+import { Error, Input, Wrapper } from "./styles";
 
-const InputComponent = (props) => {
-  const { name, onChange, value } = props;
+const InputComponent = ({ name, form, validation, Icon, placeholder, type = "text" }) => {
+  const {
+    register,
+    setValue,
+    formState: { dirtyFields, isValid },
+  } = useFormContext();
+
+  useEffect(() => {
+    setValue(name, form?.[name]);
+  }, [name]);
+
   return (
     <Wrapper>
-      <Input name={name} onChange={onChange} value={value} {...props} />
+      <div className="wrapper-elements">
+        <Icon />
+        <Input type={type} {...register(name, { required: true, ...validation })} placeholder={placeholder}/>
+      </div>
+      {dirtyFields[name] && !isValid && <Error>{validation?.message}</Error>}
     </Wrapper>
   );
 };
 
-export default InputComponent;
+const mapStateToProps = (state) => {
+  return {
+    form: state.formData.formFields,
+  };
+};
+
+export default connect(mapStateToProps)(InputComponent);
