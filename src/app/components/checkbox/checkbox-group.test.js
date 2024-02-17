@@ -12,7 +12,7 @@ export function useForm() {
 }
 
 describe("CheckBoxGroup component", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     const mockMethods = useForm();
 
     const { getByText } = render(

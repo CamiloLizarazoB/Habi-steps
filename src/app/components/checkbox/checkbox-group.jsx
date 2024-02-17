@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { CheckBoxItem, Label, Wrapper } from "./styles";
 
 const CheckBoxGroup = ({ name, options }) => {
-  const { register } = useFormContext(); // retrieve all hook methods
+  const { register } = useFormContext(); 
 
   return (
     <>
