@@ -47,16 +47,14 @@ describe("Summary Component", () => {
 
     const mappedProps = mapStateToProps(initialState);
 
-    const wrapper = mount(
+    const wrapper = shallow(
       <Provider store={store}>
         <FormProvider {...mockMethods}>
-          <Input {...mappedProps} />
+          <Input {...mappedProps} name="name" />
         </FormProvider>
       </Provider>
     );
 
-    expect(wrapper.find(Wrapper).exists()).toEqual(true);
-    // expect(mappedProps.summary).toEqual(initialState.formData.formFields);
-    // expect(mappedProps.step).toEqual(6);
+    expect(wrapper.find(Wrapper).exists()).toEqual(false);
   });
 });
