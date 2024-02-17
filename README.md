@@ -23,7 +23,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 With coverage.
 
-### `npm test --detectOpenHandles` --and again ### `npm test -- --coverage`
+### `npm test -- --detectOpenHandles` --and again ### `npm test -- --coverage`
 
 If the coverage is not generate.
 
